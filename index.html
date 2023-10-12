@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- my font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Oswald&family=PT+Serif:ital@1&family=Viga&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Oswald&family=PT+Serif:ital@1&family=Viga&display=swap" rel="stylesheet" /> -->
 
     <title>My Portfolio</title>
   </head>
@@ -50,7 +50,7 @@
     <!-- awal Jumbotron -->
     <section class="jumbotron">
       <img class="rounded-circle img-thumbnail" src="IMG/profil.jpg" alt="HaykaLLL" width="200" />
-      <h1 class="display-4">Hi, you can call me haykal, iam a junior web developer<i class="fas fa-thermometer-empty"></i></h1> 
+      <h1 class="display-4">Hi, you can call me haykal, iam a junior web developer<i class="fas fa-thermometer-empty"></i></h1>
       <!-- <p class="lead">Web Developer</p> -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -151,22 +151,33 @@
             <h2>Contact Me</h2>
           </div>
         </div>
-        <div class="row justify-content-center mb-5">
-          <div class="col-8">
-            <form>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
-              </div>
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <!-- Alert ketika sukses mengirim form -->
+            <div class="alert alert-info alert-dismissible fade show my-alert d-none" role="alert">
+              <strong>Thanks!</strong> For your Message
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <!-- akhir alert -->
+            <form name="portfolio-contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type=Text" class="form-control" id="name" aria-describedby="name" />
+                <input type=Text" class="form-control" id="name" aria-describedby="name" name="nama" required/>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="Pesan" rows="6"></textarea>
+                <textarea class="form-control" id="Pesan" rows="6" name="pesan" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary btn-kirim">Submit</button>
+
+              <button class="d-none btn btn-primary btn-loading" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -196,5 +207,32 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwzJgl9DuuFDXeTVS2SBSEXchBrw0uhqM6U_H5R6r6HKiRo0fTqV3PURbj4TOnLb4GJ_g/exec";
+      const form = document.forms["portfolio-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol loading,hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+             // tampilkan tombol kirim,hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            // tampilkan alert
+            myAlert.classList.toggle('d-none');
+            // reset isi form
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
