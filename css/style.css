@@ -1,6 +1,8 @@
 /* body */
 body {
     font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
+    
 }
 
 
@@ -20,7 +22,6 @@ body {
 
 
 .jumbotron h1 {
-    width: auto;
     color: rgb(255, 255, 255);
     text-shadow: 5px 5px 5px black;
     font-weight: bold;
