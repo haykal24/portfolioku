@@ -4,6 +4,10 @@ body {
     overflow-x: hidden;
     
 }
+.Judul-web {
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
 
 
 /* navbar */

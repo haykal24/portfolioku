@@ -21,15 +21,12 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light shadow-lg p-3 bg-body rounded">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="IMG/logo-no-background.png" alt="" width="50" height="30" class="d-inline-block align-text-top" />
-          <a class="navbar-brand Judul-web" href="index.html"></a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light shadow-lg p-2 bg-body rounded">
+      <div class="container-fluid">
+          <a class="navbar-brand Judul-web" href="#"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-        </a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item pe-3">
@@ -66,7 +63,7 @@
 
     <!-- about -->
     <section id="about">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row text-center mb-3">
           <div class="col" data-aos="zoom-in-down" data-aos-duration="2000">
             <h2>About Me</h2>
@@ -91,7 +88,7 @@
     <!-- akhir about -->
     <!-- Projects -->
     <section id="project" style="background-color: #a1bfee">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row text-center mb-3">
           <div class="col">
             <h2>My Projects</h2>
@@ -150,7 +147,7 @@
     <!-- akhir projects -->
     <!-- gallery -->
     <section id="gallery">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row text-center mb-3">
           <div class="col">
             <h2>Gallery</h2>
@@ -214,7 +211,7 @@
 
     <!-- contact -->
     <section id="contact">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row text-center mb-3">
           <div class="col">
             <h2>Contact Me</h2>
@@ -322,12 +319,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     <script>
-                  gsap.registerPlugin(TextPlugin);
-                  gsap.to(".Judul-web", { duration: 2, delay: 1, text: "HaykaLLL" });
-                  gsap.to(".display-4", { duration: 5, delay: 1, text: "Hi, you can call me haykal, i am a junior web developer" });
-                  gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
-                  // gsap.from(".img-thumbnail", { duration: 1, y: -200, opacity: 0, ease: "bounce", delay:7});
-                  gsap.from(".img-thumbnail", {y:-350,x:-100, rotation: 360, duration:2, ease:"bounce",delay:2});
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".Judul-web", { duration: 2, delay: 1, text: "HaykaLLL" });
+      gsap.to(".display-4", { duration: 5, delay: 1, text: "Hi, you can call me haykal, i am a junior web developer" });
+      gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+      // gsap.from(".img-thumbnail", { duration: 1, y: -200, opacity: 0, ease: "bounce", delay:7});
+      gsap.from(".img-thumbnail", { y: -350, x: -100, rotation: 360, duration: 2, ease: "bounce", delay: 2 });
     </script>
   </body>
 </html>
