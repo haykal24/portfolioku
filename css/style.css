@@ -12,17 +12,10 @@ body {
 .jumbotron {
     padding-top: 6rem;
     background-color: #a1bfee;
-    
 }
 
 .jumbotron img {
-    /* float: right; */
     margin: 20px;
-    animation: img 2s 7s ease-in-out forwards 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
 }
 
 
@@ -37,11 +30,13 @@ body {
     padding: 5px;
     text-align: center;
 }
+
 /* gallery */
 .gallery-img {
     width: 100%;
 }
-#gallery .row > * {
+
+#gallery .row>* {
     padding: 0;
 }
 
@@ -63,61 +58,3 @@ section {
     padding-top: 5rem;
 }
 
-/* animasi dekstop 567px*/
-/* @keyframes h1 {
-    0% {
-        width: 0;
-    }
-
-    50% {
-        width: 50%;
-        color: rgb(0, 0, 0);
-        text-shadow: 5px 5px 3px rgb(253, 253, 253);
-        
-    }
-
-    100% {
-        width: 83%;
-    }
-} */
-
-@keyframes img {
-    from {
-        margin-left: 0;
-    }
-
-    to {
-        margin-left: 550px;
-        transform: rotate(360deg);
-    }
-
-}
-
-/* animasi gambar dekstop */
-/* @media screen and (min-width: 700px) {
-    .jumbotron img {
-        float: right;
-        margin: 20px;
-        animation: img 2s 6.5s 1 ease-in forwards;
-    }
-
-} */
-
-/* animasi texts dekstop */
-/* @media screen and (min-width: 700px) {
-    .jumbotron h1 {
-        width: auto;
-        color: rgb(255, 255, 255);
-        text-shadow: 5px 5px 5px black;
-        float: left;
-        font-weight: bold;
-        text-transform: capitalize;
-        font-size: 40px;
-        margin: 30px auto;
-        padding: 10px;
-        overflow: hidden;
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        animation: h1 7s steps(34) 1 forwards;
-    }
-} */
